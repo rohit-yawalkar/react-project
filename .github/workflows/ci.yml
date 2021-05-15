@@ -16,7 +16,10 @@ jobs:
   build:
   # name of the job .. can be anything .. it groups set of actions
 
-    runs-on: ubuntu-latest
+    runs-on: ${{matrix.os}}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macOS-latest]
 
     strategy:
       matrix:
